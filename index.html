@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сучасна пекарня</title>
     <!-- Styles-->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/main.min.css">
 
 </head>
 
@@ -26,7 +26,7 @@
                         <li><a class="link" href="#contact-section">Контакти</a></li>
                     </ul>
                 </nav>
-                <button class="button" type="button">Замовити дзвінок</button>
+                <button class="button modal-btn-open" type="button">Замовити дзвінок</button>
             </div>
     </header>
 
@@ -117,6 +117,7 @@
                     <ul class="formats-list">
                         <li class="formats-item">
                             <article class="format-card">
+                                <img class="format-image" src="./images/walrus-format.jpg" alt="walrus-format">
                                 <h3 class="format-title" lang="en">Walrus</h3>
                                 <div class="format-text">
                                     <p>Площа до 120 м2</p>
@@ -128,6 +129,7 @@
                         </li>
                         <li class="formats-item">
                             <article class="format-card">
+                                <img class="format-image" src="./images/horseshoe-format.jpg" alt="horseshoe-format">
                                 <h3 class="format-title" lang="en">Horseshoe</h3>
                                 <div class="format-text">
                                     <p>Площа до 120 м2</p>
@@ -139,6 +141,7 @@
                         </li>
                         <li class="formats-item">
                             <article class="format-card">
+                                <img class="format-image" src="./images/handlebar-format.jpg" alt="handlebar-format">
                                 <h3 class="format-title" lang="en">Handlebar</h3>
                                 <div class="format-text">
                                     <p>Площа до 120 м2</p>
@@ -149,7 +152,7 @@
                             </article>
                         </li>
                     </ul>
-                    <button class="carousel-button" type="button">
+                    <button class="carousel-button next" type="button">
                         <svg width="16" height="16">
                             <use href="./images/icons.svg#icon-arrow"></use>
                         </svg>
@@ -164,6 +167,30 @@
                     <div class="contact-form">
                         <h2 class="contact-title section-title">Приєднуйтесь до мережі пекарень</h2>
                         <p>Заповни форму щоб ми зв'язались з тобою!</p>
+                        <form name="contact-form" autocomplete="off">
+                            <div class="form-field">
+                                <label class="form-label visually-hidden" for="user-name">Ім'я</label>
+                                <input class="form-input" type="text" name="user-name" id="user-name"
+                                    placeholder="Ім'я">
+                            </div>
+
+                            <div class="form-field">
+                                <label class="form-label visually-hidden" for="user-tel">Телефон</label>
+                                <input class="form-input" type="tel" name="user-tel" id="user-tel"
+                                    placeholder="Телефон">
+                            </div>
+
+                            <div class="form-field">
+                                <label class="form-label visually-hidden" for="user-email">Електронна пошта</label>
+                                <input class="form-input" type="email" name="user-email" id="user-email"
+                                    placeholder="Електронна пошта">
+                            </div>
+
+                            <button class="form-button button" type="submit">Замовити дзвінок</button>
+                            <p class="form-terms">Натискаючи на кнопку я погоджуюсь з <a class="form-terms-link"
+                                    href="#">політикою
+                                    конфіденційності</a></p>
+                        </form>
                     </div>
                     <iframe class="contact-map"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.164054656813!2d30.48865857655763!3d50.456669671593325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce637bfe1717%3A0x5370c2254ad1b952!2z0LLRg9C70LjRhtGPINCh0ZbRh9C-0LLQuNGFINCh0YLRgNGW0LvRjNGG0ZbQsiwgNTQsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1706611518215!5m2!1suk!2sua"
@@ -225,6 +252,45 @@
             </div>
         </div>
     </footer>
+
+    <div class="backdrop is-hidden">
+        <div class="modal">
+            <button class="modal-btn-close" type="button">Close</button>
+            <h2>Замовити дзвінок</h2>
+            <p>Напишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
+            <form name="modal-form" autocomplete="on">
+                <div class="form-field">
+                    <label class="form-label visually-hidden" for="user-name">Ім'я</label>
+                    <input class="form-input" type="text" name="user-name" id="user-name" placeholder="Ім'я" required>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label visually-hidden" for="user-tel">Телефон</label>
+                    <input class="form-input" type="tel" name="user-tel" id="user-tel" placeholder="Телефон" required
+                        pattern="^\+{0-9}{12}">
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label visually-hidden" for="user-email">Електронна пошта</label>
+                    <input class="form-input" type="email" name="user-email" id="user-email"
+                        placeholder="Електронна пошта" required>
+                </div>
+
+                <!-- <div class="checkbox">
+                    <input class="checkbox-input visually-hidden" type="checkbox" id="terms-conditions"
+                        name="terms-conditions">
+                    <label class="checkbox-label" for="terms-conditions">Я точно погоджуюсь з політикоюк
+                        конфіденційності</label>
+                </div> -->
+
+                <button class="form-button button" type="submit">Замовити дзвінок</button>
+                <p class="form-terms">Натискаючи на кнопку я погоджуюсь з <a class="form-terms-link" href="#">політикою
+                        конфіденційності</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
